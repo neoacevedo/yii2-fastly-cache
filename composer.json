@@ -1,0 +1,42 @@
+{
+    "name": "neoacevedo/yii2-fastly-cache",
+    "description": "Componente de caché Yii2 para Fastly KV Store: solución de almacenamiento en caché perimetral de alto rendimiento",
+    "type": "yii2-extension",
+    "keywords": [
+        "yii2",
+        "fastly",
+        "cache",
+        "edge-computing",
+        "key-value-store",
+        "performance",
+        "extension",
+        "component"
+    ],
+    "license": "GPL-3.0+",
+    "homepage": "https://neoacevedo.nom.co",
+    "authors": [
+        {
+            "name": "Néstor Acevedo",
+            "email": "contacto@neoacevedo.nom.co"
+        }
+    ],
+    "funding": [
+        {
+            "type": "other",
+            "url": "https://ko-fi.com/neoacevedo"
+        },
+        {
+            "type": "other",
+            "url": "https://vaki.co/es/vaki/yii2-fastly-cache"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "yiisoft/yii2": "~2.0.54"
+    },
+    "autoload": {
+        "psr-4": {
+            "neoacevedo\\yii2\\fastly\\": "src/"
+        }
+    }
+}
