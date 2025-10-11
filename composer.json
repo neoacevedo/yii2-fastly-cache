@@ -20,6 +20,7 @@
             "email": "contacto@neoacevedo.nom.co"
         }
     ],
+    "minimum-stability": "stable",
     "funding": [
         {
             "type": "other",
@@ -37,6 +38,11 @@
     "autoload": {
         "psr-4": {
             "neoacevedo\\yii2\\fastly\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "25.10.x-dev"
         }
     }
 }
