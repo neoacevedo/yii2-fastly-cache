@@ -23,17 +23,13 @@
     "minimum-stability": "stable",
     "funding": [
         {
-            "type": "other",
+            "type": "ko-fi",
             "url": "https://ko-fi.com/neoacevedo"
-        },
-        {
-            "type": "other",
-            "url": "https://vaki.co/es/vaki/yii2-fastly-cache"
         }
     ],
     "require": {
         "php": ">=8.2",
-        "yiisoft/yii2": "~2.0.54"
+        "yiisoft/yii2": "~2.0.53"
     },
     "autoload": {
         "psr-4": {
