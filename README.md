@@ -97,14 +97,14 @@ TagDependency::invalidate(Yii::$app->cache, 'usuarios');
 
 ## Métodos Disponibles
 
-| Método | Descripción |
-|--------|-------------|
-| `get($key)` | Obtiene un valor de caché |
-| `set($key, $value, $duration)` | Establece un valor en caché |
+| Método                         | Descripción                                |
+| ------------------------------ | ------------------------------------------ |
+| `get($key)`                    | Obtiene un valor de caché                  |
+| `set($key, $value, $duration)` | Establece un valor en caché                |
 | `add($key, $value, $duration)` | Agrega un valor solo si la clave no existe |
-| `delete($key)` | Elimina una clave de caché |
-| `exists($key)` | Verifica si una clave existe |
-| `flush()` | Limpia toda la caché (no implementado) |
+| `delete($key)`                 | Elimina una clave de caché                 |
+| `exists($key)`                 | Verifica si una clave existe               |
+| `flush()`                      | Limpia toda la caché (no implementado)     |
 
 ## Requisitos
 
@@ -140,8 +140,14 @@ Si encuentras algún problema o tienes sugerencias:
 
 Si este proyecto te es útil, considera hacer una donación:
 
-- ☕ [Ko-fi](https://ko-fi.com/neoacevedo)
-- 💰 [Vaki](https://vaki.co/es/vaki/yii2-fastly-cache)
+<div align="center">
+
+| Ko-fi                                                  | Litecoin                                                     |
+| ------------------------------------------------------ | ------------------------------------------------------------ |
+| [![Ko-fi QR](ko-fi.png)](https://ko-fi.com/neoacevedo) | <img title="" src="Litecoin.jpg" alt="Litecoin" width="399"> |
+| ☕ [Ko-fi](https://ko-fi.com/neoacevedo)                | Ł Donaciones Litecoin                                        |
+
+</div>
 
 ## Licencia
 
@@ -150,6 +156,7 @@ Este proyecto está licenciado bajo la Licencia GPL-3.0+ - ver el archivo [LICEN
 ## Autor
 
 **Néstor Acevedo**
+
 - Website: [neoacevedo.nom.co](https://neoacevedo.nom.co)
 - Email: contacto@neoacevedo.nom.co
 
