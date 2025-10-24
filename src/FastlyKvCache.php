@@ -78,6 +78,23 @@ class FastlyKvCache extends Cache
     }
 
     /**
+     * Obtiene los valores de las claves especificadas.
+     * @param array $keys las claves a obtener
+     * @return array un array asociativo con las claves y sus valores
+     */
+    protected function getValues($keys)
+    {
+        $values = [];
+        foreach ($keys as $key) {
+            $value = $this->getValue($key);
+            if ($value !== false) {
+                $values[$key] = $value;
+            }
+        }
+        return $values;
+    }
+
+    /**
      * Establece el valor de la clave.
      * @param string $key la clave a establecer
      * @param mixed $value el valor a establecer
@@ -86,7 +103,7 @@ class FastlyKvCache extends Cache
      */
     protected function setValue($key, $value, $duration)
     {
-        $url = "{$this->baseUrl}/resources/stores/kv/{$this->storeId}/keys/{$key}";
+        $url = "{$this->baseUrl}/resources/stores/kv/{$this->storeId}/keys/{$key}/time_to_live_sec/{$duration}";
         $response = $this->makeRequest('PUT', $url, $value) !== false;
         return $response;
     }
@@ -118,12 +135,22 @@ class FastlyKvCache extends Cache
     }
 
     /**
-     * Limpia todos los valores en el almacenamiento.
-     * @todo Validar si este método se usa o se elimina.
+     * Limpia todos los valores de la caché.
+     * @return bool true si la operación fue exitosa, false en caso contrario
      */
     protected function flushValues()
     {
-        return false;
+        $url = "{$this->baseUrl}/resources/stores/kv/{$this->storeId}/keys?prefix={$this->keyPrefix}";
+        $response = $this->makeRequest('GET', $url);
+        if (is_bool($response)) {
+            return $response;
+        }
+
+        $json = json_decode($response, true);
+        foreach ($json['data'] as $key) {
+            $this->deleteValue($key);
+        }
+        return true;
     }
 
     /**
